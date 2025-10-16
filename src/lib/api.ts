@@ -75,7 +75,7 @@ export const blocksAPI = {
     return response.data;
   },
 
-  update: async (id: string, data: { content: Partial<BlockContent> }): Promise<void> => {
+  update: async (id: string, data: { type?: Block['type']; content?: Partial<BlockContent>; order?: number }): Promise<void> => {
     await api.put(`/blocks/${id}`, data);
   },
 
